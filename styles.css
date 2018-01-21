@@ -1,0 +1,42 @@
+body {
+    height:700px;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.article-window {
+    border: 2px solid #E7E7E7;
+    border-radius: 5px;
+}
+
+.article-window p {
+    padding-top: 8px;
+}
+
+.article-window:first-child p span {
+    float: right;
+    color: #337AB7;
+}
+
+hr {
+    margin-bottom: 0;
+}
+
+table {
+    height: 100%;
+    width: 100%;
+    margin: 10px auto;
+}
+
+table a {
+    display: block;
+    float: right;
+}
+
+.details-button {
+    background-color: transparent;
+    color: black;
+    border: 2px solid #E7E7E7;
+}
