@@ -23,24 +23,34 @@
                 <li><a href="#">Home</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#">Sign In</a></li>
-                <li><a href="#">Sign Up</a></li>
+                <li><a href="#">Sign In</a></li>
+                <li class="active"><a href="#">Sign Up</a></li>
             </ul>
         </div>
     </div>
 </nav>
 <div class="container">
-    <form class="form-inline">
-        <h2>Sign In</h2>
-        <div class="">
-            <label for="Username">Username</label>
-            <input type="text" class="form-control" id="Username" placeholder="Username">
-            <br><br>
-            <label for="Password">Password</label>
-            <input type="text" class="form-control" id="Password" placeholder="Password">
-            <br><br>
+    <form class="navbar-left col-md-offset-2">
+        <h2 class="col-md-offset-4">Sign Up</h2>
+        <div class="form-group">
+            <div>
+                <label for="FirstName">First Name</label>
+                <label for="LastName">Last Name</label>
+                <label for="Email">Email</label>
+                <label for="Username">Username</label>
+                <label for="Password">Password</label>
+                <label for="ConPassword">Confirm password</label>
+            </div>
+            <div>
+                <input type="text" class="form-control" id="FirstName" placeholder="James">
+                <input type="text" class="form-control" id="LastName" placeholder="Smith">
+                <input type="text" class="form-control" id="Email" placeholder="example@gmail.com">
+                <input type="text" class="form-control" id="Username" placeholder="Username">
+                <input type="text" class="form-control" id="Password" placeholder="Password">
+                <input type="text" class="form-control" id="ConPassword" placeholder="Confirm password">
+            </div>
+            <button type="submit" class="btn btn-default submit-btn col-md-offset-4">Sign Up</button>
         </div>
-        <button type="submit" class="btn btn-default submit-btn">Sign Up</button>
     </form>
 </div>
 <script src="../jquery/jquery-3.2.1.min.js"></script>

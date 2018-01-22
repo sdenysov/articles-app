@@ -1,26 +1,26 @@
 body {
-    height:700px;
+    height: 700px;
 }
 
 .navbar {
     margin-bottom: 0;
 }
 
-form {
-    width: 60%;
-    margin: 0 auto;
-}
-
-h2 {
-    margin-left: 90px;
-}
-
 label {
-    margin-right: 15px;
+    display: block;
+    text-align: right;
+    margin-bottom: 24px;
+}
+
+input{
+    margin: 10px 5px;
+}
+
+.form-group div {
+    display: inline-block;
 }
 
 .submit-btn {
     background-color: #5CB85C;
     color: white;
-    margin-left: 85px;
 }
