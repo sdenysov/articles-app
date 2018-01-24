@@ -29,3 +29,12 @@ hr {
     float: right;
     margin-top: -15px;
 }
+
+h5 {
+    display: block;
+    font-size: 20px;
+}
+
+.close-button {
+    margin-top: -25px;
+}
