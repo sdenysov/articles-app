@@ -38,7 +38,7 @@
                 calling extra attention to featured content or information.
                 </p>
                 <p>
-                    <a class="btn btn-lg btn-primary" href="#" role="button" data-toggle="modal" data-target="#New-Article">
+                    <a class="btn btn-lg btn-primary" href="#" role="button" data-toggle="modal" data-target="#new-article">
                         <span>New Article</span>
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>
@@ -50,18 +50,18 @@
     </div>
 </div>
 <div class="container">
-    <div class="modal fade" id="New-Article" tabindex="-1" role="dialog" aria-labelledby="New-Article-Label" aria-hidden="true">
+    <div class="modal fade" id="new-article" tabindex="-1" role="dialog" aria-labelledby="new-article-label" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="New-Article-Label">NEW ARTICLE</h5>
+                <header class="modal-header">
+                    <h5 class="modal-title" id="new-article-label">NEW ARTICLE</h5>
                     <div class="close-button">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                </div>
-                <div class="modal-body">
+                </header>
+                <main class="modal-body">
                     <form>
                         <div class="form-group">
                             <label for="title">Title</label>
@@ -72,11 +72,11 @@
                             <textarea class="form-control" id="Content" rows="5" placeholder="Content"></textarea>
                         </div>
                     </form>
-                </div>
-                <div class="modal-footer">
+                </main>
+                <footer class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Save</button>
-                </div>
+                </footer>
             </div>
         </div>
     </div>
@@ -85,21 +85,23 @@
     <div class="row">
         <div class="col-lg-6">
             <article class="article">
-                <div>
+                <header>
                     <span>Creation date: 06-58-2017</span>
                     <div class="article-controls">
                         <span class="glyphicon glyphicon-pencil"></span>
                         <span class="glyphicon glyphicon-remove"></span>
                     </div>
-                </div>
-                <h2>Hello World!!!</h2>
-                <p>Article content is here.</p>
-                <hr>
-                <div class="autor-info">
+                </header>
+                <main>
+                    <h2>Hello World!!!</h2>
+                    <p>Article content is here.</p>
+                    <hr>
+                </main>
+                <footer class="autor-info">
                     <span class="glyphicon glyphicon-user"></span>
                     <span>Author: <br> Alexey Popov</span>
                     <div class="details-button"><a class="btn btn-primary" href="#" role="button">View details »</a></div>
-                </div>
+                </footer>
             </article>
         </div>
     </div>
