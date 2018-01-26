@@ -21,7 +21,7 @@ hr {
     margin-bottom: 0;
 }
 
-.autor-info span {
+.author-info span {
     padding-top: 10px;
 }
 
@@ -30,7 +30,7 @@ hr {
     margin-top: -15px;
 }
 
-h5 {
+.modal-title {
     display: block;
     font-size: 20px;
 }

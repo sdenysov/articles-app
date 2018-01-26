@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="../bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link href="styles.css" type="text/css" rel="stylesheet">
+    <link href="assets/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="assets/css/styles.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-default navbar-static-top">
@@ -50,38 +50,6 @@
     </div>
 </div>
 <div class="container">
-    <div class="modal fade" id="new-article" tabindex="-1" role="dialog" aria-labelledby="new-article-label" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <header class="modal-header">
-                    <h5 class="modal-title" id="new-article-label">NEW ARTICLE</h5>
-                    <div class="close-button">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                </header>
-                <main class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="title">Title</label>
-                            <input type="text" class="form-control" id="title" placeholder="Title">
-                        </div>
-                        <div class="form-group">
-                            <label for="Content">Content</label>
-                            <textarea class="form-control" id="Content" rows="5" placeholder="Content"></textarea>
-                        </div>
-                    </form>
-                </main>
-                <footer class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save</button>
-                </footer>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container">
     <div class="row">
         <div class="col-lg-6">
             <article class="article">
@@ -95,9 +63,9 @@
                 <main>
                     <h2>Hello World!!!</h2>
                     <p>Article content is here.</p>
-                    <hr>
                 </main>
-                <footer class="autor-info">
+                <footer class="author-info">
+                    <hr>
                     <span class="glyphicon glyphicon-user"></span>
                     <span>Author: <br> Alexey Popov</span>
                     <div class="details-button"><a class="btn btn-primary" href="#" role="button">View details »</a></div>
@@ -106,8 +74,39 @@
         </div>
     </div>
 </div>
-<script src="../jquery/jquery-3.2.1.min.js"></script>
-<script src="../bootstrap/js/bootstrap.min.js"></script>
-<script src="../js/script.js"></script>
+
+<div class="modal fade" id="new-article" tabindex="-1" role="dialog" aria-labelledby="new-article-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h5 class="modal-title" id="new-article-label">NEW ARTICLE</h5>
+                <div class="close-button">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </header>
+            <main class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" id="title" placeholder="Title">
+                    </div>
+                    <div class="form-group">
+                        <label for="Content">Content</label>
+                        <textarea class="form-control" id="Content" rows="5" placeholder="Content"></textarea>
+                    </div>
+                </form>
+            </main>
+            <footer class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </footer>
+        </div>
+    </div>
+</div>
+<script src="assets/jquery/jquery-3.2.1.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
