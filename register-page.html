@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="styles.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Sign In</a></li>
+                <li class="active"><a href="#">Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <form class="form-horizontal col-md-offset-2">
+        <h2 class="col-md-offset-2">Sign Up</h2>
+        <div class="form-group">
+            <label for="firstname" class="col-sm-2 control-label">First Name</label>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" id="firstname" placeholder="James">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastname" class="col-sm-2 control-label">Last Name</label>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" id="lastname" placeholder="Smith">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-7">
+                <input type="email" class="form-control" id="email" placeholder="example@gmail.com">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="username" class="col-sm-2 control-label">Username</label>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" id="username" placeholder="Username">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-7">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ConPassword" class="col-sm-2 control-label">Confirm password</label>
+            <div class="col-sm-7">
+                <input type="password" class="form-control" id="ConPassword" placeholder="Confirm password">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-7">
+                <button type="submit" class="btn btn-default submit-btn">Sign up</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="../jquery/jquery-3.2.1.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../js/script.js"></script>
+</body>
+</html>
