@@ -2,25 +2,6 @@ body {
     height: 700px;
 }
 
-.navbar {
-    margin-bottom: 0;
-}
-
-label {
-    display: block;
-    text-align: right;
-    margin-right: 15px;
-    margin-bottom: 24px;
-}
-
-input{
-    margin: 10px 5px;
-}
-
-.form-group div {
-    display: inline-block;
-}
-
 .submit-btn {
     background-color: #5CB85C;
     color: white;
