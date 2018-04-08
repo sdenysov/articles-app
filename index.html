@@ -23,8 +23,8 @@
                 <li class="active"><a href="#">Home</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Sign In</a></li>
-                <li><a href="#">Sign Up</a></li>
+                <li><a href="./login-page.html">Sign In</a></li>
+                <li><a href="./register-page.html">Sign Up</a></li>
             </ul>
         </div>
     </div>
@@ -49,31 +49,7 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-6">
-            <article class="article">
-                <header>
-                    <span>Creation date: 06-58-2017</span>
-                    <div class="article-controls">
-                        <span class="glyphicon glyphicon-pencil"></span>
-                        <span class="glyphicon glyphicon-remove"></span>
-                    </div>
-                </header>
-                <main>
-                    <h2>Hello World!!!</h2>
-                    <p>Article content is here.</p>
-                </main>
-                <footer class="author-info">
-                    <hr>
-                    <span class="glyphicon glyphicon-user"></span>
-                    <span>Author: <br> Alexey Popov</span>
-                    <div class="details-button"><a class="btn btn-primary" href="#" role="button">View details »</a></div>
-                </footer>
-            </article>
-        </div>
-    </div>
-</div>
+<div id="article-board" class="container"></div>
 
 <div class="modal fade" id="new-article" tabindex="-1" role="dialog" aria-labelledby="new-article-label" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -89,24 +65,25 @@
             <main class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" class="form-control" id="title" placeholder="Title">
+                        <label for="modal-article-title">Title</label>
+                        <input type="text" class="form-control" id="modal-article-title" placeholder="Title">
                     </div>
                     <div class="form-group">
-                        <label for="Content">Content</label>
-                        <textarea class="form-control" id="Content" rows="5" placeholder="Content"></textarea>
+                        <label for="modal-article-content">Content</label>
+                        <textarea class="form-control" id="modal-article-content" rows="5" placeholder="Content"></textarea>
                     </div>
                 </form>
             </main>
             <footer class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-primary" id="modal-save-btn" data-dismiss="modal">Save</button>
             </footer>
         </div>
     </div>
 </div>
 <script src="assets/jquery/jquery-3.2.1.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/libs/dateFormat.js"></script>
 <script src="assets/js/script.js"></script>
 </body>
 </html>

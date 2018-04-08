@@ -10,24 +10,35 @@ body {
     border: 2px solid #E7E7E7;
     border-radius: 5px;
     padding: 10px;
+    height: 270px;
 }
 
 .article-controls {
     float: right;
     color: #337AB7;
+    cursor: pointer;
+}
+
+.article main {
+    padding-bottom: 10px;
+    height: 160px;
+}
+
+.article footer {
+    border-top: 1px solid #eeeeee;
+    padding-top: 10px;
 }
 
 hr {
     margin-bottom: 0;
 }
 
-.author-info span {
-    padding-top: 10px;
-}
-
 .details-button {
     float: right;
-    margin-top: -15px;
+}
+
+.author-info .glyphicon-user {
+    font-size: 11px;
 }
 
 .modal-title {
@@ -42,4 +53,8 @@ hr {
 .submit-btn {
     background-color: #5CB85C;
     color: white;
+}
+
+#article-board .row {
+    padding-bottom: 30px;
 }
