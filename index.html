@@ -83,7 +83,34 @@
 </div>
 <script src="assets/jquery/jquery-3.2.1.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/libs/lodash.js"></script>
 <script src="assets/libs/dateFormat.js"></script>
-<script src="assets/js/script.js"></script>
+<script src="app/article/articleDao.js"></script>
+<script src="app/article/articleModel.js"></script>
+<script src="app/article/articleService.js"></script>
+<script src="app/article/articleView.js"></script>
+<script src="app/article/articleController.js"></script>
+<script src="app/app.js"></script>
 </body>
 </html>
+
+<script id="article-template" type="text/plain">
+    <article data-article-id="123" class="article">
+        <header>
+            <span>Creation date: {{data}}</span>
+            <div class="article-controls">
+                <span class="glyphicon glyphicon-pencil"></span>
+                <span class="glyphicon glyphicon-remove"></span>
+            </div>
+        </header>
+        <main>
+            <h2>{{title}}</h2>
+            <p>{{content}}</p>
+        </main>
+        <footer class="author-info">
+            <div class="details-button"><a class="btn btn-primary" href="#" role="button">View details »</a></div>
+            <span class="glyphicon glyphicon-user"> Author:</span><br>
+            <span>{{authorName}}</span>
+        </footer>
+    </article>
+</script>

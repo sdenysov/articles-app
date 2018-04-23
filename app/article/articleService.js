@@ -1,0 +1,3 @@
+var articleServie = (function () {
+    return {}
+})();
