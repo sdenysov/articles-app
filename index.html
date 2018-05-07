@@ -38,10 +38,10 @@
                 calling extra attention to featured content or information.
                 </p>
                 <p>
-                    <a class="btn btn-lg btn-primary" href="#" role="button" data-toggle="modal" data-target="#new-article">
+                    <button id="new-article-btn" class="btn btn-lg btn-primary" role="button">
                         <span>New Article</span>
                         <span class="glyphicon glyphicon-chevron-right"></span>
-                    </a>
+                    </button>
                     <a class="btn btn-lg btn-primary glyphicon glyphicon-th-large" href="#" role="button"></a>
                     <a class="btn btn-lg btn-primary glyphicon glyphicon-th" href="#" role="button"></a>
                 </p>
@@ -51,11 +51,11 @@
 </div>
 <div id="article-board" class="container"></div>
 
-<div class="modal fade" id="new-article" tabindex="-1" role="dialog" aria-labelledby="new-article-label" aria-hidden="true">
+<div class="modal fade" id="article-modal" tabindex="-1" role="dialog" aria-labelledby="new-article-label" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <header class="modal-header">
-                <h5 class="modal-title" id="new-article-label">NEW ARTICLE</h5>
+                <h5 class="modal-title"></h5>
                 <div class="close-button">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -104,8 +104,8 @@
             </div>
         </header>
         <main>
-            <h2>{{title}}</h2>
-            <p>{{content}}</p>
+            <h2 class="article-title">{{title}}</h2>
+            <p class="article-content">{{content}}</p>
         </main>
         <footer class="author-info">
             <div class="details-button"><a class="btn btn-primary" href="#" role="button">View details »</a></div>

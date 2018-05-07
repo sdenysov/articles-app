@@ -7,14 +7,48 @@ var articleView = (function () {
             articleContainerElement.appendChild(articleElement);
         },
         remove: function (id) {
-            var articleElement = document.querySelector('article[data-article-id="' + id + '"]');
+            var articleElement = document.querySelector('article[data-id="' + id + '"]');
             var col = articleElement.parentNode;
             var row = col.parentNode;
             row.removeChild(col);
             if (row.childElementCount === 0) {
                 row.parentNode.removeChild(row);
             }
+        },
+        openCreateModal: function () {
+            $('#article-modal')
+                .on('show.bs.modal', function () {
+                    var $modal = $(this);
+                    $modal.find('.modal-title').text('NEW ARTICLE');
+                })
+                .modal('show');
+        },
+        openUpdateModal: function (article) {
+            $('#article-modal')
+                .on('show.bs.modal', function () {
+                    var $modal = $(this);
+                    $modal.find('.modal-title').text('UPDATE ARTICLE');
+                })
+                .modal('show');
+        },
+        update: function (article) {
+            var articleElement = document.querySelector('article[data-id="' + article.id + '"]');
+            var articleTitleElement = articleElement.querySelector('.article-title');
+            articleTitleElement.innerHTML = article.title;
+            var articleContentElement = articleElement.querySelector('.article-content');
+            articleContentElement.innerHTML = article.content;
         }
+        // update: function (article) {
+        //     var modalWindowLabel = document.getElementById('new-article-label');
+        //     modalWindowLabel.innerHTML = 'UPDATE ARTICLE';
+        //     var modalWindowBtn = document.getElementById('modal-save-btn');
+        //     modalWindowBtn.innerHTML = 'Update';
+        //     modalWindowBtn.id = 'modal-upd-btn';
+        //     var modalWindowTitle = document.getElementById('modal-article-title');
+        //     modalWindowTitle.value = article.title;
+        //     var modalWindowContent = document.getElementById('modal-article-content');
+        //     modalWindowContent.innerHTML = article.content;
+        // }
     };
 
     function createRow() {
@@ -105,12 +139,14 @@ var articleView = (function () {
 
     function createArticleCaption(article) {
         var articleCaption = document.createElement('h2');
+        articleCaption.className = 'article-title';
         articleCaption.innerHTML = article.title;
         return articleCaption;
     }
 
     function createArticleContent(article) {
         var articleContent = document.createElement('p');
+        articleContent.className = 'article-content';
         articleContent.innerHTML = article.content;
         return articleContent;
     }

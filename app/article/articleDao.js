@@ -34,6 +34,11 @@ var articleDao = (function () {
             var articles = this.getAll();
             delete articles[id];
             saveArticles(articles);
+        },
+        update: function (article) {
+            var articles = this.getAll();
+            articles[article.id] = article;
+            saveArticles(articles);
         }
     };
 
