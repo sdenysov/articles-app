@@ -19,7 +19,10 @@ var articleView = (function () {
             $('#article-modal')
                 .on('show.bs.modal', function () {
                     var $modal = $(this);
+                    $modal.attr('data-mode', 'create');
                     $modal.find('.modal-title').text('NEW ARTICLE');
+                    $modal.find('#modal-article-title').val("");
+                    $modal.find('#modal-article-content').val("");
                 })
                 .modal('show');
         },
@@ -27,7 +30,11 @@ var articleView = (function () {
             $('#article-modal')
                 .on('show.bs.modal', function () {
                     var $modal = $(this);
+                    $modal.attr('data-mode', 'update');
+                    $modal.attr('data-article-id', article.id);
                     $modal.find('.modal-title').text('UPDATE ARTICLE');
+                    $modal.find('#modal-article-title').val(article.title);
+                    $modal.find('#modal-article-content').val(article.content);
                 })
                 .modal('show');
         },
@@ -38,17 +45,6 @@ var articleView = (function () {
             var articleContentElement = articleElement.querySelector('.article-content');
             articleContentElement.innerHTML = article.content;
         }
-        // update: function (article) {
-        //     var modalWindowLabel = document.getElementById('new-article-label');
-        //     modalWindowLabel.innerHTML = 'UPDATE ARTICLE';
-        //     var modalWindowBtn = document.getElementById('modal-save-btn');
-        //     modalWindowBtn.innerHTML = 'Update';
-        //     modalWindowBtn.id = 'modal-upd-btn';
-        //     var modalWindowTitle = document.getElementById('modal-article-title');
-        //     modalWindowTitle.value = article.title;
-        //     var modalWindowContent = document.getElementById('modal-article-content');
-        //     modalWindowContent.innerHTML = article.content;
-        // }
     };
 
     function createRow() {
