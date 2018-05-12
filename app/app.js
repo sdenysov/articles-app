@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+    templateEngine.init();
+
     articleController.renderAllArticles();
 
     var modalSaveBtn = document.getElementById('modal-save-btn');

@@ -15,13 +15,13 @@ var articleController = (function () {
         },
         removeHandler: function (event) {
             var articleElement = event.target.closest('article');
-            var articleId = articleElement.dataset.id;
+            var articleId = articleElement.dataset.articleId;
             articleDao.remove(articleId);
             articleView.remove(articleId);
         },
         editHandler: function (event) {
             var articleElement = event.target.closest('article');
-            var articleId = articleElement.dataset.id;
+            var articleId = articleElement.dataset.articleId;
             var article = articleDao.findOne(articleId);
             articleView.openUpdateModal(article);
         },
