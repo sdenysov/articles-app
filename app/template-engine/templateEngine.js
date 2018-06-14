@@ -1,13 +1,11 @@
 var templateEngine = (function () {
 
     var templateCache = {};
+    $('[data-lodash-template]').each(function () {
+        templateCache[this.id] = _.template(this.innerHTML);
+    });
 
     return {
-        init: function () {
-            $('[data-lodash-template]').each(function () {
-                templateCache[this.id] = _.template(this.innerHTML);
-            });
-        },
         render: function (templateName, data) {
             var context = {
                 dateFormat: dateFormat,

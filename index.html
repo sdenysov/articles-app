@@ -63,14 +63,14 @@
                 </div>
             </header>
             <main class="modal-body">
-                <form>
+                <form id="article-modal-form">
                     <div class="form-group">
                         <label for="modal-article-title">Title</label>
-                        <input type="text" class="form-control" id="modal-article-title" placeholder="Title">
+                        <input name="title" type="text" class="form-control" id="modal-article-title" placeholder="Title">
                     </div>
                     <div class="form-group">
                         <label for="modal-article-content">Content</label>
-                        <textarea class="form-control" id="modal-article-content" rows="5" placeholder="Content"></textarea>
+                        <textarea name="content" class="form-control" id="modal-article-content" rows="5" placeholder="Content"></textarea>
                     </div>
                 </form>
             </main>
@@ -89,7 +89,7 @@
 <script src="app/article/articleModel.js"></script>
 <script src="app/article/articleService.js"></script>
 <script src="app/article/articleView.js"></script>
-<script src="app/article/articleController.js"></script>
+<script src="app/controllers/articleController.js"></script>
 <script src="app/template-engine/templateEngine.js"></script>
 <script src="app/app.js"></script>
 </body>
