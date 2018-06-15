@@ -14,8 +14,7 @@ var formValidator = (function ($) {
     };
 
     function getMessage(messages, rule) {
-        /*if ($.isObject(messages)) {*/
-        if (typeof(messages) === 'object'){
+        if (_.isObject(messages)) {
             return messages[rule];
         }
         return messages;
@@ -46,7 +45,8 @@ var formValidator = (function ($) {
             if (!rules.hasOwnProperty(rule)) {
                 continue;
             }
-            if (isNotValid(field, rule)) {
+            var ruleParam = rules[rule];
+            if (isNotValid(field, rule, ruleParam)) {
                 return {
                     valid: false,
                     rule: rule
@@ -56,7 +56,7 @@ var formValidator = (function ($) {
         return {valid: true};
     }
 
-    function isNotValid(field, rule) {
+    function isNotValid(field, rule, ruleParam) {
         var errorRules = {
             required: {
                 validator: 'isEmpty',
@@ -81,14 +81,25 @@ var formValidator = (function ($) {
         };
 
         var errorRule = errorRules[rule];
-        return ValidationUtils[errorRule.validator](field.value) === errorRule.result;
+        return ValidationUtils[errorRule.validator](field.value, ruleParam) === errorRule.result;
     }
 
 
-    function showErrors(resultMessages) {
+    function showErrors(errorMessages) {
         //TODO show errors
+        for (var errorFieldName in errorMessages.messages){
+            if(!errorMessages.messages.hasOwnProperty(errorFieldName)){
+                continue;
+            }
+            var errorFieldContainer = document.getElementById(errorFieldName).parentNode;
+            var mainErrorFieldContainer = errorFieldContainer.parentNode;
+            mainErrorFieldContainer.classList.add('has-error', 'has-feedback');
+            errorFieldContainer.appendChild(ValidationUtils.errorMsgView());
+            errorFieldContainer.appendChild(ValidationUtils.errorMsgValue(errorMessages, errorFieldName));
+            errorFieldContainer.appendChild(ValidationUtils.errorIconView())
+        }
+        return mainErrorFieldContainer;
     }
-
 })(jQuery);
 
 
