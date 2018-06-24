@@ -66,7 +66,9 @@ var registerController = (function () {
                     inputPassword: form.password.value,
                     conPassword: form.cpassword.value
                 };
-                userService.createUser(userData);
+                userService.createUser(userData, function () {
+                    window.location = '/login';
+                });
             }
         })
     }

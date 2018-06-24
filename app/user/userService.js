@@ -1,9 +1,9 @@
 var userService = (function () {
 
     return {
-        createUser: function (userData) {
+        createUser: function (userData, successCallback) {
             var user = new User(userData);
-            userDao.save(user);
+            userDao.save(user, successCallback);
         }
     }
 })();

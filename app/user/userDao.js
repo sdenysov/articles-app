@@ -14,11 +14,12 @@ var userDao = (function () {
             var data = localStorage.getItem('users');
             return JSON.parse(data);
         },
-        save: function (user) {
+        save: function (user, successCallback) {
             var users = this.getAll();
             user.id = this.sequence.getNext();
             users[user.id] = user;
             saveUser(users);
+            successCallback();
         }
     };
     function saveUser(users) {

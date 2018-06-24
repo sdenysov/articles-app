@@ -22,6 +22,12 @@ var articleDao = (function () {
         },
         findOne: function (id) {
             var articles = this.getAll();
+            var articles = {
+                12: {
+                    id: 12,
+                    user: 1
+                }
+            };
             return articles[id];
         },
         save: function (article) {

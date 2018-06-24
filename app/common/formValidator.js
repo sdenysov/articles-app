@@ -1,14 +1,40 @@
 var formValidator = (function ($) {
 
+    var ruleToValidatorWithErrorCondition = {
+        required: {
+            validator: 'isEmpty',
+            result: true
+        },
+        lettersonly: {
+            validator: 'hasNumber',
+            result: true
+        },
+        email: {
+            validator: 'isEmail',
+            result: true
+        },
+        minlength: {
+            validator: 'isLengthLessThen',
+            result: true
+        },
+        equalTo: {
+            validator: 'equals',
+            result: false
+        }
+    };
+
     return {
         configure: function (config) {
             var form = config.form;
+            $(form).find(':input').bind('input', function () {
+                formValidationView.removeErrorSigns(this);
+            });
             form.addEventListener('submit', function (event) {
                 event.preventDefault();
                 var validationResults = validate(config);
                 validationResults.valid
                     ? config.submitHandler(form)
-                    : showErrors(validationResults);
+                    : formValidationView.showValidationResults(form, validationResults);
             });
         }
     };
@@ -57,48 +83,13 @@ var formValidator = (function ($) {
     }
 
     function isNotValid(field, rule, ruleParam) {
-        var errorRules = {
-            required: {
-                validator: 'isEmpty',
-                result: true
-            },
-            lettersonly: {
-                validator: 'hasNumber',
-                result: true
-            },
-            email: {
-                validator: 'isEmail',
-                result: true
-            },
-            minlength: {
-                validator: 'minlength',
-                result: true
-            },
-            equalTo: {
-                validator: 'equalToPwd',
-                result: true
-            }
-        };
-
-        var errorRule = errorRules[rule];
-        return ValidationUtils[errorRule.validator](field.value, ruleParam) === errorRule.result;
-    }
-
-
-    function showErrors(errorMessages) {
-        //TODO show errors
-        for (var errorFieldName in errorMessages.messages){
-            if(!errorMessages.messages.hasOwnProperty(errorFieldName)){
-                continue;
-            }
-            var errorFieldContainer = document.getElementById(errorFieldName).parentNode;
-            var mainErrorFieldContainer = errorFieldContainer.parentNode;
-            mainErrorFieldContainer.classList.add('has-error', 'has-feedback');
-            errorFieldContainer.appendChild(ValidationUtils.errorMsgView());
-            errorFieldContainer.appendChild(ValidationUtils.errorMsgValue(errorMessages, errorFieldName));
-            errorFieldContainer.appendChild(ValidationUtils.errorIconView())
+        var value = field.value;
+        var condition = ruleParam;
+        if (rule === 'equalTo') {
+            condition = $(ruleParam).val();
         }
-        return mainErrorFieldContainer;
+        var errorRule = ruleToValidatorWithErrorCondition[rule];
+        return ValidationUtils[errorRule.validator](value, condition) === errorRule.result;
     }
 })(jQuery);
 

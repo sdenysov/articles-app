@@ -3,6 +3,5 @@ function User(userData) {
     this.lastName = userData.lastName;
     this.email = userData.email;
     this.userName = userData.userName;
-    this.inputPassword = userData.inputPassword;
-    this.conPassword = userData.conPassword;
+    this.password = userData.password;
 }
